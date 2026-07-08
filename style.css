@@ -364,3 +364,32 @@ p {
     margin-right: 0;
   }
 }
+.letter{
+
+text-align:left;
+
+line-height:2;
+
+}
+
+.letter p{
+
+margin-bottom:20px;
+
+font-size:18px;
+
+}
+
+.signature{
+
+text-align:right;
+
+font-family:var(--script-font);
+
+font-size:48px;
+
+color:#0b4d97;
+
+margin-top:40px;
+
+}
