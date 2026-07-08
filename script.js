@@ -1,43 +1,42 @@
-const pageFlip = new St.PageFlip(document.getElementById("book"), {
-  width: 390,
-  height: 520,
-  size: "stretch",
-  minWidth: 300,
-  maxWidth: 780,
-  minHeight: 420,
-  maxHeight: 560,
-  showCover: true,
-  mobileScrollSupport: false,
-  useMouseEvents: true,
-  flippingTime: 900,
-  drawShadow: true,
-  maxShadowOpacity: 0.35
-});
+let current = 0;
+const cards = document.querySelectorAll(".card");
 
-pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+function showCard(index) {
+  cards.forEach(card => card.classList.remove("active"));
+  cards[index].classList.add("active");
+}
 
-document.getElementById("prevBtn").addEventListener("click", () => {
-  pageFlip.flipPrev();
-});
+function nextCard() {
+  current++;
+  if (current >= cards.length) current = cards.length - 1;
+  showCard(current);
+}
 
-document.getElementById("nextBtn").addEventListener("click", () => {
-  pageFlip.flipNext();
-});
+function openEnvelope() {
+  document.querySelector(".envelope").classList.toggle("open");
+}
+
+function openSong() {
+  window.open(
+    "https://www.youtube.com/results?search_query=The+Two+of+Us+Grover+Washington+Jr",
+    "_blank"
+  );
+}
 
 const birthDate = new Date("1998-07-13T00:00:00");
 
-function updateAgeCounter() {
+function updateAge() {
   const now = new Date();
   let diff = Math.floor((now - birthDate) / 1000);
 
-  const years = Math.floor(diff / (365.25 * 24 * 60 * 60));
-  diff -= Math.floor(years * 365.25 * 24 * 60 * 60);
+  const years = Math.floor(diff / 31557600);
+  diff -= years * 31557600;
 
-  const days = Math.floor(diff / (24 * 60 * 60));
-  diff -= days * 24 * 60 * 60;
+  const days = Math.floor(diff / 86400);
+  diff -= days * 86400;
 
-  const hours = Math.floor(diff / (60 * 60));
-  diff -= hours * 60 * 60;
+  const hours = Math.floor(diff / 3600);
+  diff -= hours * 3600;
 
   const minutes = Math.floor(diff / 60);
   const seconds = diff - minutes * 60;
@@ -48,80 +47,60 @@ function updateAgeCounter() {
     <div class="age-box"><strong>${hours}</strong><span>HOURS</span></div>
     <div class="age-box"><strong>${minutes}</strong><span>MINUTES</span></div>
     <div class="age-box"><strong>${seconds}</strong><span>SECONDS</span></div>
-    <div class="age-box"><strong>∞</strong><span>LOVED</span></div>
+    <div class="age-box"><strong>∞</strong><span>LOVE</span></div>
   `;
 }
 
-updateAgeCounter();
-setInterval(updateAgeCounter, 1000);
+updateAge();
+setInterval(updateAge, 1000);
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.textContent = Math.random() > 0.5 ? "💙" : "✨";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 4 + Math.random() * 4 + "s";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 8000);
-}
-
-setInterval(createHeart, 700);
-
-const canvas = document.getElementById("confettiCanvas");
+const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
-let confetti = [];
+let pieces = [];
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
 }
+resize();
+addEventListener("resize", resize);
 
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+function celebrate() {
+  pieces = [];
 
-function createConfetti() {
-  confetti = [];
-
-  for (let i = 0; i < 180; i++) {
-    confetti.push({
+  for (let i = 0; i < 160; i++) {
+    pieces.push({
       x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height - canvas.height,
+      y: Math.random() * -canvas.height,
       size: Math.random() * 8 + 4,
       speed: Math.random() * 4 + 2,
-      angle: Math.random() * 360,
-      spin: Math.random() * 10
+      rotate: Math.random() * 360
     });
   }
+
+  animateConfetti();
 }
 
-function drawConfetti() {
+function animateConfetti() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  confetti.forEach((c) => {
-    c.y += c.speed;
-    c.angle += c.spin;
+  pieces.forEach(p => {
+    p.y += p.speed;
+    p.rotate += 5;
 
     ctx.save();
-    ctx.translate(c.x, c.y);
-    ctx.rotate((c.angle * Math.PI) / 180);
-    ctx.fillStyle = ["#ffd86b", "#ffffff", "#7fb3ff", "#ff9ecb"][
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotate * Math.PI / 180);
+    ctx.fillStyle = ["#ffffff", "#9ed0ff", "#0b3a75", "#ffd8ea"][
       Math.floor(Math.random() * 4)
     ];
-    ctx.fillRect(-c.size / 2, -c.size / 2, c.size, c.size);
+    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
     ctx.restore();
   });
 
-  confetti = confetti.filter((c) => c.y < canvas.height + 20);
+  pieces = pieces.filter(p => p.y < canvas.height + 20);
 
-  if (confetti.length > 0) {
-    requestAnimationFrame(drawConfetti);
+  if (pieces.length > 0) {
+    requestAnimationFrame(animateConfetti);
   }
 }
-
-document.getElementById("celebrateBtn").addEventListener("click", () => {
-  createConfetti();
-  drawConfetti();
-});
