@@ -40,7 +40,7 @@ setInterval(createHeart, 400);
 // =====================
 // Birthday Counter
 // =====================
-const counter = document.getElementById("counter");
+const counter = document.getElementById("ageCounter");
 
 function updateCounter() {
   if (!counter) return;
@@ -113,3 +113,32 @@ function sparkle() {
 }
 
 setInterval(sparkle, 800);
+// =====================
+// Gallery Slider
+// =====================
+const slides = document.querySelectorAll(".polaroid");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+
+let current = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+}
+
+if (nextBtn && prevBtn && slides.length) {
+
+  nextBtn.addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+}
