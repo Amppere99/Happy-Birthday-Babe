@@ -1,128 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBD My Favorite Human 🩵</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
 </head>
+
 <body>
 
-    <div id="welcome-page">
-        <div class="welcome-card">
-            <h2>Knock, Knock! 🚪</h2>
-            <p>Somebody left a tiny birthday surprise here for you. Are you ready to see it?</p>
-            <button class="btn-start" onclick="startSurprise()">Yes, open it! ✨</button>
+  <div class="sky"></div>
+  <div id="stars"></div>
+  <div id="hearts"></div>
+
+  <a
+    class="youtube-btn"
+    href="https://www.youtube.com/results?search_query=The+Two+of+Us+Grover+Washington+Jr"
+    target="_blank"
+  >
+    🎵 Our Song
+  </a>
+
+  <main class="app">
+    <h1 class="main-title">A Birthday Book For You</h1>
+
+    <div id="book">
+      <div class="page cover">
+        <div>
+          <h1>Happy Birthday</h1>
+          <h2>My Love 💙</h2>
+          <p>Open this little book made just for you.</p>
         </div>
+      </div>
+
+      <div class="page intro">
+        <h2>To My Favorite Person</h2>
+        <p>
+          Every page in this book holds a little piece of my heart.
+          I made this for you because you deserve something sweet,
+          warm, and full of love.
+        </p>
+      </div>
+
+      <div class="page age-page">
+        <h2>You Have Been Making The World Better For...</h2>
+        <div id="ageCounter"></div>
+        <p class="small">
+          Since July 13, 1998 — every second has led you here.
+        </p>
+      </div>
+
+      <!-- 15 PHOTO PAGES -->
+      <div class="page photo-page"><img src="images/photo1.jpg"><p>Memory 1 — One of my favorite moments with you.</p></div>
+      <div class="page photo-page"><img src="images/photo2.jpg"><p>Memory 2 — You make ordinary days feel special.</p></div>
+      <div class="page photo-page"><img src="images/photo3.jpg"><p>Memory 3 — Your smile is my favorite view.</p></div>
+      <div class="page photo-page"><img src="images/photo4.jpg"><p>Memory 4 — I am grateful for every little moment.</p></div>
+      <div class="page photo-page"><img src="images/photo5.jpg"><p>Memory 5 — You bring warmth into my life.</p></div>
+      <div class="page photo-page"><img src="images/photo6.jpg"><p>Memory 6 — Thank you for being you.</p></div>
+      <div class="page photo-page"><img src="images/photo7.jpg"><p>Memory 7 — I hope this makes you smile.</p></div>
+      <div class="page photo-page"><img src="images/photo8.jpg"><p>Memory 8 — You are so special to me.</p></div>
+      <div class="page photo-page"><img src="images/photo9.jpg"><p>Memory 9 — I love the way we laugh together.</p></div>
+      <div class="page photo-page"><img src="images/photo10.jpg"><p>Memory 10 — You are my sweetest thought.</p></div>
+      <div class="page photo-page"><img src="images/photo11.jpg"><p>Memory 11 — I feel lucky to know you.</p></div>
+      <div class="page photo-page"><img src="images/photo12.jpg"><p>Memory 12 — You make my heart feel safe.</p></div>
+      <div class="page photo-page"><img src="images/photo13.jpg"><p>Memory 13 — You are my favorite adventure.</p></div>
+      <div class="page photo-page"><img src="images/photo14.jpg"><p>Memory 14 — More memories are waiting for us.</p></div>
+      <div class="page photo-page"><img src="images/photo15.jpg"><p>Memory 15 — This is only the beginning.</p></div>
+
+      <div class="page letter-page">
+        <h2>A Little Letter For You</h2>
+        <p>
+          Happy Birthday, my love.  
+          I hope today reminds you how loved, appreciated, and special you are.
+          Thank you for your smile, your kindness, your patience, and every
+          beautiful memory we have shared.
+        </p>
+        <p>
+          No matter where life takes us, I hope you always remember that
+          you have a very special place in my heart.
+        </p>
+      </div>
+
+      <div class="page final-page">
+        <h1>Happy 28th Birthday 🎂</h1>
+        <p>
+          I hope this year brings you happiness, love, peace,
+          success, and everything your heart dreams of.
+        </p>
+        <button id="celebrateBtn">Celebrate 🎉</button>
+      </div>
     </div>
 
-    <div id="main-content">
-        
-        <a href="https://music.apple.com/th/album/just-the-two-of-us-feat-bill-withers/1434934057?i=1434934376" target="_blank" class="music-link-box">
-            <span class="music-icon"> 💿 </span>
-            <div class="music-text-hint">
-                <strong>Just the Two of Us 🩵</strong>
-                <span>Tap to play on Apple Music & listen along!</span>
-            </div>
-        </a>
-
-        <div class="book-container">
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img1.jpg" alt="Photo 1"></div>
-                <div class="caption-container">Here’s where our chaotic journey started! 🫵</div>
-                <span class="page-number">1 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img2.jpg" alt="Photo 2"></div>
-                <div class="caption-container">Look at that smile, standard 100% cuteness. 🥰</div>
-                <span class="page-number">2 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img3.jpg" alt="Photo 3"></div>
-                <div class="caption-container">Remember this day? We ate way too much. 🍕</div>
-                <span class="page-number">3 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img4.jpg" alt="Photo 4"></div>
-                <div class="caption-container">My absolute favorite view in the world. 🌎</div>
-                <span class="page-number">4 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img5.jpg" alt="Photo 5"></div>
-                <div class="caption-container">Even when you're sulking, you're precious. 😗</div>
-                <span class="page-number">5 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img6.jpg" alt="Photo 6"></div>
-                <div class="caption-container">Stop stealing my hoodies! (Just kidding, keep them). 🧥</div>
-                <span class="page-number">6 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img7.jpg" alt="Photo 7"></div>
-                <div class="caption-container">Just a photo of me hanging out with a superstar. ⭐</div>
-                <span class="page-number">7 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img8.jpg" alt="Photo 8"></div>
-                <div class="caption-container">Thanks for always putting up with my silliness. 🤪</div>
-                <span class="page-number">8 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img9.jpg" alt="Photo 9"></div>
-                <div class="caption-container">A sweet little memory we made together. 🌸</div>
-                <span class="page-number">9 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img10.jpg" alt="Photo 10"></div>
-                <div class="caption-container">Double digits! 10 pages of loving you. 🔟</div>
-                <span class="page-number">10 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img11.jpg" alt="Photo 11"></div>
-                <div class="caption-container">This picture deserves a permanent frame. 🖼️</div>
-                <span class="page-number">11 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img12.jpg" alt="Photo 12"></div>
-                <div class="caption-container">Blurry but full of pure happiness. 🤍</div>
-                <span class="page-number">12 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img13.jpg" alt="Photo 13"></div>
-                <div class="caption-container">You + Me = The best team ever. 🤝</div>
-                <span class="page-number">13 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img14.jpg" alt="Photo 14"></div>
-                <div class="caption-container">Almost at the end... are you feeling loved yet? 🥺</div>
-                <span class="page-number">14 / 16</span>
-            </div>
-            <div class="paper">
-                <div class="img-wrapper"><img src="images/img15.jpg" alt="Photo 15"></div>
-                <div class="caption-container">To all the endless tomorrows with you. ♾️</div>
-                <span class="page-number">15 / 16</span>
-            </div>
-            <div class="paper final-page">
-                <h3>To My Dearest 🩵</h3>
-                <p>
-                    Happy Birthday! Thank you for being the brightest part of my everyday. 
-                    I'm so incredibly lucky to have you by my side. Let's make more 
-                    beautiful memories and keep building our own little world together. ✨
-                </p>
-                <span class="page-number">16 / 16</span>
-            </div>
-        </div>
-
-        <div class="controls">
-            <button class="btn-turn" onclick="prevPage()">⬅️ พลิกกลับหน้าเก่า</button>
-            <button class="btn-turn" onclick="nextPage()">พลิกหน้าถัดไป ➡️</button>
-        </div>
+    <div class="controls">
+      <button id="prevBtn">← Back</button>
+      <button id="nextBtn">Next ❤️</button>
     </div>
+  </main>
 
-    <script src="script.js"></script>
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="script.js"></script>
 </body>
 </html>
