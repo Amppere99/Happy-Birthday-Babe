@@ -10,11 +10,17 @@
     
     <style>
         :root {
-            --bg-color: #f2f8fc;       /* Soft minimalist blue */
-            --card-color: #ffffff;     /* Crisp white */
-            --primary-blue: #a7c7e7;   /* Cozy pastel blue */
-            --dark-blue: #4a6572;      /* Muted slate text */
-            --accent-pink: #ffb7b2;    /* Playful coral pink */
+            --bg-color: #f2f8fc;
+            --card-color: #ffffff;
+            --primary-blue: #a7c7e7;
+            --dark-blue: #4a6572;
+            --accent-pink: #ffb7b2;
+            --shadow-smooth: 0 12px 35px rgba(167, 199, 231, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -27,59 +33,65 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Music Player */
         .music-container {
             margin-top: 30px;
             background: var(--card-color);
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(167, 199, 231, 0.2);
+            box-shadow: 0 4px 15px rgba(167, 199, 231, 0.15);
             display: flex;
             align-items: center;
             gap: 12px;
             border: 1px solid #e2edf7;
+            animation: floating 3s ease-in-out infinite;
         }
 
         .music-btn {
             background: var(--primary-blue);
             border: none;
             color: white;
-            width: 35px;
-            height: 35px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
-        .music-btn:hover { transform: scale(1.1); }
-        .music-title { font-size: 0.85rem; font-weight: 600; }
+        .music-btn:hover {
+            transform: scale(1.1);
+            background-color: #92b5db;
+        }
 
-        /* Header */
+        .music-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
         header {
             text-align: center;
-            margin: 35px 20px 20px 20px;
+            margin: 35px 20px 25px 20px;
         }
 
-        h1 {
+        header h1 {
             font-family: 'Fredoka', sans-serif;
             color: var(--dark-blue);
-            font-size: 2.3rem;
-            margin: 0 0 8px 0;
+            font-size: 2.4rem;
+            margin: 0 0 10px 0;
         }
 
-        .sub-title {
+        header .sub-title {
             font-size: 1rem;
             color: #8cb3d9;
             font-style: italic;
         }
 
-        /* Playground / Slider Area */
         .slider-outer {
             width: 90%;
             max-width: 420px;
@@ -94,19 +106,20 @@
             background: var(--card-color);
             padding: 12px;
             border-radius: 24px;
-            box-shadow: 0 12px 35px rgba(167, 199, 231, 0.2);
-            box-sizing: border-box;
+            box-shadow: var(--shadow-smooth);
+            border: 1px solid rgba(167, 199, 231, 0.2);
         }
 
         .mySlides {
             display: none;
             width: 100%;
+            animation: fadeEffect 0.6s ease-in-out;
         }
 
         .img-wrapper {
             width: 100%;
             height: 380px;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
             position: relative;
         }
@@ -122,24 +135,23 @@
             top: 12px;
             left: 12px;
             background: rgba(255, 255, 255, 0.85);
-            padding: 4px 10px;
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        /* Captions Under the Image */
         .caption-container {
-            margin-top: 15px;
+            margin-top: 18px;
             padding: 0 10px;
             text-align: center;
-            font-size: 1rem;
-            min-height: 45px; /* Holds space for text */
+            font-size: 1.05rem;
+            min-height: 50px;
             font-weight: 600;
-            color: var(--dark-blue);
+            line-height: 1.4;
         }
 
-        /* Playful Navigation Buttons */
         .nav-buttons {
             display: flex;
             justify-content: space-between;
@@ -150,60 +162,80 @@
 
         .btn-playful {
             flex: 1;
-            padding: 12px;
+            padding: 14px 10px;
             border: none;
-            border-radius: 15px;
+            border-radius: 16px;
             background: var(--card-color);
             color: var(--dark-blue);
             font-family: 'Fredoka', sans-serif;
             font-size: 0.95rem;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(167, 199, 231, 0.15);
-            transition: all 0.2s ease;
+            box-shadow: 0 6px 15px rgba(167, 199, 231, 0.15);
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 2px solid transparent;
         }
 
         .btn-playful:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             background: var(--primary-blue);
             color: white;
-            box-shadow: 0 6px 15px rgba(167, 199, 231, 0.3);
+            box-shadow: 0 8px 20px rgba(167, 199, 231, 0.35);
         }
 
-        .btn-playful:active { transform: translateY(0); }
-
-        /* Wish Card */
         .wish-card {
             max-width: 420px;
             width: 90%;
-            margin: 35px 20px;
-            padding: 25px;
+            margin: 40px 20px;
+            padding: 30px 25px;
             background: var(--card-color);
             border-radius: 24px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(167, 199, 231, 0.1);
-            border-bottom: 5px solid var(--primary-blue);
-            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(167, 199, 231, 0.1);
+            border-bottom: 6px solid var(--primary-blue);
         }
 
         .wish-card h3 {
             font-family: 'Fredoka', sans-serif;
             margin-top: 0;
-            color: var(--dark-blue);
+            font-size: 1.3rem;
         }
 
         .wish-card p {
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin-bottom: 0;
+            line-height: 1.7;
+            font-size: 0.98rem;
         }
 
-        .sparkle { color: var(--accent-pink); }
+        .sparkle {
+            color: var(--accent-pink);
+            display: inline-block;
+            animation: heartBeat 1.2s infinite alternate;
+        }
 
         footer {
-            margin: 20px 0 30px 0;
+            margin: 10px 0 35px 0;
             font-size: 0.75rem;
             color: #b3cbdc;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.4; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes heartBeat {
+            to { transform: scale(1.2); }
+        }
+
+        @media (max-width: 375px) {
+            header h1 { font-size: 2rem; }
+            .img-wrapper { height: 320px; }
+            .btn-playful { font-size: 0.85rem; padding: 12px 6px; }
         }
     </style>
 </head>
@@ -224,29 +256,129 @@
 
     <div class="slider-outer">
         <div class="slider-container">
-            
             <div class="mySlides">
-                <div class="img-wrapper">
-                    <span class="slide-counter">1 / 15</span>
-                    <img src="https://picsum.photos/400/400?random=1" alt="Memory 1">
-                </div>
+                <div class="img-wrapper"><span class="slide-counter">1 / 15</span><img src="https://picsum.photos/400/400?random=1" alt="Memory 1"></div>
                 <div class="caption-container">Here’s where our chaotic journey started! 🫵</div>
             </div>
-
             <div class="mySlides">
                 <div class="img-wrapper"><span class="slide-counter">2 / 15</span><img src="https://picsum.photos/400/400?random=2" alt="Memory 2"></div>
                 <div class="caption-container">Look at that smile, standard 100% cuteness. 🥰</div>
             </div>
-
             <div class="mySlides">
                 <div class="img-wrapper"><span class="slide-counter">3 / 15</span><img src="https://picsum.photos/400/400?random=3" alt="Memory 3"></div>
                 <div class="caption-container">Remember this day? We ate way too much. 🍕</div>
             </div>
-
             <div class="mySlides">
                 <div class="img-wrapper"><span class="slide-counter">4 / 15</span><img src="https://picsum.photos/400/400?random=4" alt="Memory 4"></div>
                 <div class="caption-container">My absolute favorite view in the world. 🌎</div>
             </div>
-
             <div class="mySlides">
-                <div class="img-wrapper"><span class="slide-counter">5 / 15</span>
+                <div class="img-wrapper"><span class="slide-counter">5 / 15</span><img src="https://picsum.photos/400/400?random=5" alt="Memory 5"></div>
+                <div class="caption-container">Even when you're sulking, you're precious. 😗</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">6 / 15</span><img src="https://picsum.photos/400/400?random=6" alt="Memory 6"></div>
+                <div class="caption-container">Stop stealing my hoodies! (Just kidding, keep them). 🧥</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">7 / 15</span><img src="https://picsum.photos/400/400?random=7" alt="Memory 7"></div>
+                <div class="caption-container">Just a photo of me hanging out with a superstar. ⭐</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">8 / 15</span><img src="https://picsum.photos/400/400?random=8" alt="Memory 8"></div>
+                <div class="caption-container">Thanks for always putting up with my silliness. 🤪</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">9 / 15</span><img src="https://picsum.photos/400/400?random=9" alt="Memory 9"></div>
+                <div class="caption-container">A sweet little memory we made together. 🌸</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">10 / 15</span><img src="https://picsum.photos/400/400?random=10" alt="Memory 10"></div>
+                <div class="caption-container">Double digits! 10 pages of loving you. 🔟</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">11 / 15</span><img src="https://picsum.photos/400/400?random=11" alt="Memory 11"></div>
+                <div class="caption-container">This picture deserves a permanent frame. 🖼️</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">12 / 15</span><img src="https://picsum.photos/400/400?random=12" alt="Memory 12"></div>
+                <div class="caption-container">Blurry but full of pure happiness. 🤍</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">13 / 15</span><img src="https://picsum.photos/400/400?random=13" alt="Memory 13"></div>
+                <div class="caption-container">You + Me = The best team ever. 🤝</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">14 / 15</span><img src="https://picsum.photos/400/400?random=14" alt="Memory 14"></div>
+                <div class="caption-container">Almost at the end... are you feeling loved yet? 🥺</div>
+            </div>
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">15 / 15</span><img src="https://picsum.photos/400/400?random=15" alt="Memory 15"></div>
+                <div class="caption-container">To all the endless tomorrows with you. ♾️</div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn-playful" onclick="plusSlides(-1)">⬅️ Wait, go back</button>
+            <button class="btn-playful" onclick="plusSlides(1)">Next cuteness ➡️</button>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <h3>To My Dearest <span class="sparkle">✨</span></h3>
+        <p>
+            Happy Birthday! Thank you for being the brightest part of my everyday. 
+            I'm so incredibly lucky to have you by my side. Let's make more 
+            beautiful memories and keep building our own little world together. 🩵
+        </p>
+    </div>
+
+    <footer>Made with love 💻</footer>
+
+    <script>
+        const nextButtonTexts = [
+            "Next cuteness ➡️", "Show me more! ✨", "What's next? 🤔", 
+            "Keep scrolling shorty 💖", "Are you smiling yet? 😏", "Another cute memory 📸", 
+            "Click for a surprise 🎉", "You’re doing great, next!", "Almost halfway there! ⏳", 
+            "Double digits, let's go! 🚀", "Can't stop loving this 🥺", "Get ready for the next one 🍦", 
+            "Wow, who is this cutie? 😍", "One more before the final! 🤏", "Back to the start! 🔄"
+        ];
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let nextBtn = document.querySelectorAll(".btn-playful")[1];
+            
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
+            
+            if(nextBtn) {
+                nextBtn.innerText = nextButtonTexts[slideIndex - 1];
+            }
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById("bgMusic");
+            const btn = document.getElementById("playBtn");
+            if (music.paused) {
+                music.play();
+                btn.innerText = "⏸️";
+            } else {
+                music.pause();
+                btn.innerText = "🎵";
+            }
+        }
+    </script>
+</body>
+</html>
