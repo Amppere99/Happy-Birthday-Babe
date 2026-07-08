@@ -1,315 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD My Favorite Human 🩵</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f2f8fc;       /* Soft minimalist blue */
+            --card-color: #ffffff;     /* Crisp white */
+            --primary-blue: #a7c7e7;   /* Cozy pastel blue */
+            --dark-blue: #4a6572;      /* Muted slate text */
+            --accent-pink: #ffb7b2;    /* Playful coral pink */
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: 'Quicksand', sans-serif;
+            color: var(--dark-blue);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-<title>Happy Birthday My Love ❤️</title>
+        /* Music Player */
+        .music-container {
+            margin-top: 30px;
+            background: var(--card-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(167, 199, 231, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #e2edf7;
+        }
 
-<link rel="stylesheet" href="css/style.css">
+        .music-btn {
+            background: var(--primary-blue);
+            border: none;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+        .music-btn:hover { transform: scale(1.1); }
+        .music-title { font-size: 0.85rem; font-weight: 600; }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        /* Header */
+        header {
+            text-align: center;
+            margin: 35px 20px 20px 20px;
+        }
 
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            color: var(--dark-blue);
+            font-size: 2.3rem;
+            margin: 0 0 8px 0;
+        }
+
+        .sub-title {
+            font-size: 1rem;
+            color: #8cb3d9;
+            font-style: italic;
+        }
+
+        /* Playground / Slider Area */
+        .slider-outer {
+            width: 90%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            background: var(--card-color);
+            padding: 12px;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(167, 199, 231, 0.2);
+            box-sizing: border-box;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 380px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-counter {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Captions Under the Image */
+        .caption-container {
+            margin-top: 15px;
+            padding: 0 10px;
+            text-align: center;
+            font-size: 1rem;
+            min-height: 45px; /* Holds space for text */
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        /* Playful Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 15px;
+            gap: 15px;
+        }
+
+        .btn-playful {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 15px;
+            background: var(--card-color);
+            color: var(--dark-blue);
+            font-family: 'Fredoka', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(167, 199, 231, 0.15);
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-playful:hover {
+            transform: translateY(-2px);
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 6px 15px rgba(167, 199, 231, 0.3);
+        }
+
+        .btn-playful:active { transform: translateY(0); }
+
+        /* Wish Card */
+        .wish-card {
+            max-width: 420px;
+            width: 90%;
+            margin: 35px 20px;
+            padding: 25px;
+            background: var(--card-color);
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(167, 199, 231, 0.1);
+            border-bottom: 5px solid var(--primary-blue);
+            box-sizing: border-box;
+        }
+
+        .wish-card h3 {
+            font-family: 'Fredoka', sans-serif;
+            margin-top: 0;
+            color: var(--dark-blue);
+        }
+
+        .wish-card p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .sparkle { color: var(--accent-pink); }
+
+        footer {
+            margin: 20px 0 30px 0;
+            font-size: 0.75rem;
+            color: #b3cbdc;
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="stars"></div>
-
-<div id="shooting-star"></div>
-
-<div class="cloud cloud1"></div>
-
-<div class="cloud cloud2"></div>
-
-<header>
-
-<h1>
-
-Happy Birthday
-
-<br>
-
-My Love 💙
-
-</h1>
-
-<p>
-
-A little surprise made with all my love.
-
-</p>
-
-</header>
-
-<section class="spotify">
-
-<iframe style="border-radius:20px"
-
-src="https://open.spotify.com/embed/track/1ko2lVN0vKGUl9zrU0qSlT"
-
-width="100%"
-
-height="152"
-
-frameborder="0"
-
-allowfullscreen=""
-
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-
-</iframe>
-
-</section>
-
-<section class="story">
-
-<h2>Our Story 🤍</h2>
-
-<p>
-
-We met through a dating app.
-
-One little swipe changed everything.
-
-We talked for hours.
-
-We laughed together.
-
-Then we decided to be together.
-
-Only one month...
-
-yet you've already become
-
-my favorite person.
-
-Even on the days we argued,
-
-we never stopped choosing each other.
-
-We apologized.
-
-We forgave.
-
-We stayed.
-
-And that's why
-
-I'm so grateful to celebrate your birthday with you.
-
-</p>
-
-</section>
-
-<section class="gallery">
-
-<div class="polaroid active">
-
-<img src="images/01.JPG">
-
-<div class="caption">
-
-📍 Our Beginning
-
-<br>
-
-One swipe changed my whole life.
-
-</div>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/02.JPG">
-
-<div class="caption">
-
-🤍
-
-Every adventure is better with you.
-
-</div>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/03.JPG">
-
-<div class="caption">
-
-🌊
-
-You're my favorite view.
-
-</div>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/04.JPG">
-
-<div class="caption">
-
-☁️
-
-Every place feels like home.
-
-</div>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/05.JPG">
-
-<div class="caption">
-
-💙
-
-Holding your hand is enough.
-
-</div>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/06.JPG">
-
-<div class="caption">
-
-✨
-
-Thank you for every smile.
-
-</div>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/07.JPG">
-
-<div class="caption">
-
-❤️
-
-Forever starts with us.
-
-</div>
-
-</div>
-
-<div class="buttons">
-
-<button id="prev">
-
-⬅ Previous
-
-</button>
-
-<button id="next">
-
-Next ➜
-
-</button>
-
-</div>
-
-</section>
-
-<section class="counter">
-
-<h2>
-
-✨ Celebrating You ✨
-
-</h2>
-
-<div id="ageCounter"></div>
-
-<p>
-
-The world has been brighter
-
-because you were born.
-
-💙
-
-</p>
-
-</section>
-
-<section class="letter">
-
-<h2>
-
-💌 A Letter For You
-
-</h2>
-
-<p>
-
-Happy Birthday, my love.
-
-Thank you for choosing me every single day.
-
-We've only been together for a short time,
-
-but you've already given me countless happy memories.
-
-Even when we fought,
-
-we never gave up on us.
-
-We always found our way back.
-
-I hope this birthday brings you
-
-as much happiness
-
-as you've brought into my life.
-
-I love you.
-
-Always.
-
-❤️
-
-</p>
-
-</section>
-
-<section class="cake">
-
-🎂
-
-<h2>
-
-Happy 28th Birthday
-
-My Love
-
-</h2>
-
-<button id="confetti">
-
-Blow The Candle 🕯
-
-</button>
-
-</section>
-
-<script src="js/app.js"></script>
-
-</body>
-
-</html>
+    <div class="music-container">
+        <button class="music-btn" id="playBtn" onclick="toggleMusic()">🎵</button>
+        <span class="music-title">Just the Two of Us 🩵</span>
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <header>
+        <h1>Happy Birthday, Cutie! ✨</h1>
+        <div class="sub-title">"Just the two of us, building castles in the sky..."</div>
+    </header>
+
+    <div class="slider-outer">
+        <div class="slider-container">
+            
+            <div class="mySlides">
+                <div class="img-wrapper">
+                    <span class="slide-counter">1 / 15</span>
+                    <img src="https://picsum.photos/400/400?random=1" alt="Memory 1">
+                </div>
+                <div class="caption-container">Here’s where our chaotic journey started! 🫵</div>
+            </div>
+
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">2 / 15</span><img src="https://picsum.photos/400/400?random=2" alt="Memory 2"></div>
+                <div class="caption-container">Look at that smile, standard 100% cuteness. 🥰</div>
+            </div>
+
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">3 / 15</span><img src="https://picsum.photos/400/400?random=3" alt="Memory 3"></div>
+                <div class="caption-container">Remember this day? We ate way too much. 🍕</div>
+            </div>
+
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">4 / 15</span><img src="https://picsum.photos/400/400?random=4" alt="Memory 4"></div>
+                <div class="caption-container">My absolute favorite view in the world. 🌎</div>
+            </div>
+
+            <div class="mySlides">
+                <div class="img-wrapper"><span class="slide-counter">5 / 15</span>
