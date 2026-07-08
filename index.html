@@ -3,41 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Happy Birthday My Love</title>
+  <title>Happy Birthday Jacob</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <canvas id="confetti"></canvas>
+  <canvas id="magicCanvas"></canvas>
 
-  <a class="song" href="https://www.youtube.com/results?search_query=The+Two+of+Us+Grover+Washington+Jr" target="_blank">
-    our song ♫
+  <a class="song-btn" href="https://www.youtube.com/results?search_query=Just+The+Two+Of+Us+Grover+Washington" target="_blank">
+    ♫ our song
   </a>
 
   <section class="hero">
-    <div class="star">✦</div>
+    <div class="sparkle">✦</div>
     <p class="mini">a little surprise for</p>
     <h1>Happy Birthday</h1>
-    <h2>my love</h2>
-    <p class="hint">scroll down slowly ↓</p>
+    <h2>Jacob</h2>
+    <p class="scroll-text">scroll slowly ↓</p>
   </section>
 
-  <section class="panel">
-    <div class="bubble">
+  <section class="intro reveal">
+    <div class="glass-card">
       <h3>dear you,</h3>
       <p>
-        I made this little page to keep some of our sweetest memories.
-        Every scroll is a tiny piece of my heart.
+        I made this little blue story for you — a soft place for our memories,
+        our smiles, and the beautiful beginning of us.
       </p>
     </div>
   </section>
 
-  <section class="panel age-panel">
-    <div class="bubble age-bubble">
+  <section class="age-section reveal">
+    <div class="glass-card">
       <h3>you have been making the world brighter for</h3>
       <div id="ageCounter"></div>
       <p class="caption">since July 13, 1998</p>
@@ -45,275 +43,104 @@
   </section>
 
   <section class="gallery">
-    <h3>our little memories</h3>
+    <h3 class="gallery-title">our little memories</h3>
 
-    <div class="polaroid left">
-      <img src="images/photo1.jpg" alt="Memory 1">
-      <span>you + me</span>
-    </div>
+    <div class="polaroid left reveal"><img src="images/photo1.jpg"><span>you + me</span></div>
+    <div class="polaroid right reveal"><img src="images/photo2.jpg"><span>sweet day</span></div>
+    <div class="polaroid left reveal"><img src="images/photo3.jpg"><span>favorite smile</span></div>
+    <div class="polaroid right reveal"><img src="images/photo4.jpg"><span>soft moment</span></div>
+    <div class="polaroid left reveal"><img src="images/photo5.jpg"><span>with you</span></div>
+    <div class="polaroid right reveal"><img src="images/photo6.jpg"><span>my favorite</span></div>
+    <div class="polaroid left reveal"><img src="images/photo7.jpg"><span>little joy</span></div>
+    <div class="polaroid right reveal"><img src="images/photo8.jpg"><span>blue memory</span></div>
+    <div class="polaroid left reveal"><img src="images/photo9.jpg"><span>always us</span></div>
+    <div class="polaroid right reveal"><img src="images/photo10.jpg"><span>so special</span></div>
+    <div class="polaroid left reveal"><img src="images/photo11.jpg"><span>my heart</span></div>
+    <div class="polaroid right reveal"><img src="images/photo12.jpg"><span>our story</span></div>
+    <div class="polaroid left reveal"><img src="images/photo13.jpg"><span>lucky me</span></div>
+    <div class="polaroid right reveal"><img src="images/photo14.jpg"><span>beautiful</span></div>
+    <div class="polaroid center reveal"><img src="images/photo15.jpg"><span>more to come</span></div>
+  </section>
 
-    <div class="polaroid right">
-      <img src="images/photo2.jpg" alt="Memory 2">
-      <span>sweet day</span>
-    </div>
+  <section class="letter-section reveal">
+    <div class="letter">
+      <h3>To My Favorite Person</h3>
 
-    <div class="polaroid left">
-      <img src="images/photo3.jpg" alt="Memory 3">
-      <span>favorite smile</span>
-    </div>
+      <p>Happy 28th Birthday, my love.</p>
 
-    <div class="polaroid right">
-      <img src="images/photo4.jpg" alt="Memory 4">
-      <span>soft moment</span>
-    </div>
+      <p>
+        It's still amazing to me that two strangers met through a dating app
+        and somehow found something so real. In just one month, we've already
+        shared so many beautiful memories together.
+      </p>
 
-    <div class="polaroid left">
-      <img src="images/photo5.jpg" alt="Memory 5">
-      <span>with you</span>
-    </div>
+      <p>
+        We've laughed, had misunderstandings, apologized, forgiven each other,
+        and held each other through difficult moments. Every experience has only
+        made us stronger, and I'm grateful that we always choose to work through
+        things together.
+      </p>
 
-    <div class="polaroid right">
-      <img src="images/photo6.jpg" alt="Memory 6">
-      <span>my favorite</span>
-    </div>
+      <p>
+        Thank you for finding me when I didn't even know I was looking for
+        someone like you. Thank you for bringing so much happiness and so many
+        smiles into my life.
+      </p>
 
-    <div class="polaroid left">
-      <img src="images/photo7.jpg" alt="Memory 7">
-      <span>little joy</span>
-    </div>
+      <p>
+        As you turn 28, I hope this year brings you good health, happiness,
+        success, exciting adventures, and countless reasons to smile. Here's to us,
+        and to all the beautiful memories we haven't made yet.
+      </p>
 
-    <div class="polaroid right">
-      <img src="images/photo8.jpg" alt="Memory 8">
-      <span>blue memory</span>
-    </div>
-
-    <div class="polaroid left">
-      <img src="images/photo9.jpg" alt="Memory 9">
-      <span>always us</span>
-    </div>
-
-    <div class="polaroid right">
-      <img src="images/photo10.jpg" alt="Memory 10">
-      <span>so special</span>
-    </div>
-
-    <div class="polaroid left">
-      <img src="images/photo11.jpg" alt="Memory 11">
-      <span>my heart</span>
-    </div>
-
-    <div class="polaroid right">
-      <img src="images/photo12.jpg" alt="Memory 12">
-      <span>our story</span>
-    </div>
-
-    <div class="polaroid left">
-      <img src="images/photo13.jpg" alt="Memory 13">
-      <span>lucky me</span>
-    </div>
-
-    <div class="polaroid right">
-      <img src="images/photo14.jpg" alt="Memory 14">
-      <span>beautiful</span>
-    </div>
-
-    <div class="polaroid center">
-      <img src="images/photo15.jpg" alt="Memory 15">
-      <span>more to come</span>
+      <p class="signature">
+        I love you.<br><br>
+        Always,<br>
+        Amp 🤍
+      </p>
     </div>
   </section>
-<div class="letter">
 
-<h3>To My Favorite Person</h3>
-
-<p>
-Happy 28th Birthday, my love.
-</p>
-
-<p>
-It still amazes me that two strangers met through a dating app and somehow found something so real.
-</p>
-
-<p>
-Only one month has passed since we decided to be together, yet it already feels like we've created so many beautiful memories.
-</p>
-
-<p>
-We've laughed until our stomachs hurt.
-We've shared quiet moments.
-We've had misunderstandings.
-We've apologized.
-We've forgiven each other.
-We've hugged after difficult conversations.
-And through every good and bad moment, we've always chosen each other.
-</p>
-
-<p>
-Thank you for making me smile every single day.
-Thank you for making me feel safe, appreciated, and loved.
-You have such a beautiful heart, and I'm so grateful life led me to you.
-</p>
-
-<p>
-I'm proud of the person you've become.
-You've grown into someone who is kind, gentle, hardworking, and full of love.
-The people around you are lucky to know you...
-and I'm even luckier that I get to call you mine.
-</p>
-
-<p>
-Today isn't just your birthday.
-It's the day the world was given someone truly special.
-</p>
-
-<p>
-As you turn 28, I hope this new chapter brings you endless happiness, good health, success, unforgettable adventures, and dreams that come true one by one.
-</p>
-
-<p>
-Whenever life becomes difficult, I hope you remember that you never have to face it alone anymore.
-</p>
-
-<p>
-No matter where we are...
-No matter how many miles separate us...
-You'll always have someone in Thailand cheering for you, believing in you, loving you, and waiting to make more memories together.
-</p>
-
-<p>
-Thank you for coming into my life.
-</p>
-
-<p>
-Thank you for choosing me.
-</p>
-
-<p>
-Happy Birthday, my love.
-</p>
-
-<p>
-Here's to us...
-and to every beautiful chapter that hasn't been written yet.
-</p>
-
-<p class="signature">
-
-I love you.
-
-<br><br>
-
-Always,
-
-<br>
-
-Amp 🤍
-
-</p>
-
-</div>
- <section class="final">
-
-<div class="cake-wrapper">
-
-<h2 class="wish-text">
-One last thing...
-</h2>
-
-<div class="cake">
-
-<div class="candle">
-
-<div id="flame"></div>
-
-</div>
-
-<div class="cake-top"></div>
-
-<div class="cake-middle"></div>
-
-<div class="cake-bottom"></div>
-
-</div>
-
-<p class="makewish">
-
-Make a wish 🤍
-
-</p>
-
-<button id="blowBtn">
-
-🕯️ Blow Out The Candle
-
-</button>
-
-<div id="finalMessage">
-
-<h1>Happy Birthday</h1>
-
-<h2>Jacob 🤍</h2>
-
-<p>
-
-May this year bring you endless happiness,
-
-good health,
-
-beautiful adventures,
-
-success,
-
-and every dream your heart is quietly wishing for.
-
-</p>
-
-<p>
-
-Thank you for finding me.
-
-Thank you for choosing me.
-
-Thank you for loving me.
-
-</p>
-
-<p>
-
-I can't wait to create thousands more memories with you.
-
-</p>
-
-<h3>
-
-I love you.
-
-</h3>
-
-<h4>
-
-Always,
-
-<br>
-
-Amp 🤍
-
-</h4>
-
-<a
-
-href="https://www.youtube.com/results?search_query=Just+The+Two+Of+Us+Grover+Washington"
-
-target="_blank"
-
-class="music">
-
-♫ Press play before you leave...
-
-</a>
-
-</div>
-
-</div>
-
-</section>
+  <section class="cake-section">
+    <div class="cake-wrap reveal">
+      <p class="mini">one last thing...</p>
+      <h3>make a wish</h3>
+
+      <div class="cake">
+        <div class="candle">
+          <div id="flame"></div>
+          <div id="smoke"></div>
+        </div>
+        <div class="cake-layer cake-top"></div>
+        <div class="cake-layer cake-mid"></div>
+        <div class="cake-layer cake-bottom"></div>
+      </div>
+
+      <button id="blowBtn">blow out the candle</button>
+
+      <div id="birthdayMessage">
+        <h1>Happy 28th Birthday</h1>
+        <h2>Jacob 🤍</h2>
+
+        <p>
+          May this year bring you endless happiness, peace, good health,
+          beautiful adventures, success, and every dream your heart is wishing for.
+        </p>
+
+        <p>
+          Thank you for finding me. I cannot wait to create thousands more memories with you.
+        </p>
+
+        <h4>I love you.</h4>
+        <h5>Always,<br>Amp 🤍</h5>
+
+        <a class="final-song" href="https://www.youtube.com/results?search_query=Just+The+Two+Of+Us+Grover+Washington" target="_blank">
+          ♫ press play before you leave
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
