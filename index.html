@@ -3,113 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Happy Birthday My Love</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-
-  <div class="bg-hearts"></div>
-
-  <button class="music-btn" onclick="openSong()">🎵 Our Song</button>
-
-  <main class="phone">
-    <section class="card active">
-      <div class="gift">🎁</div>
-      <h1>Happy Birthday</h1>
-      <h2>My Love 💙</h2>
-      <p>I made this little surprise just for you.</p>
-      <button onclick="nextCard()">Open it</button>
-    </section>
-
-    <section class="card envelope-card">
-      <h2>A Letter For You</h2>
-      <div class="envelope" onclick="openEnvelope()">
-        <div class="flap"></div>
-        <div class="letter">
-          <p>
-            You are my favorite person, my sweetest thought,
-            and one of the most beautiful parts of my life.
-          </p>
-        </div>
-      </div>
-      <p class="hint">Tap the envelope 💌</p>
-      <button onclick="nextCard()">Next</button>
-    </section>
-
-    <section class="card">
-      <h2>You’ve Been Making The World Better For</h2>
-      <div id="ageCounter"></div>
-      <p>Since July 13, 1998</p>
-      <button onclick="nextCard()">Next</button>
-    </section>
-
-    <section class="card scrapbook">
-      <h2>Our Memories</h2>
-
-      <div class="photos">
-        <img src="images/photo1.jpg">
-        <img src="images/photo2.jpg">
-        <img src="images/photo3.jpg">
-        <img src="images/photo4.jpg">
-      </div>
-
-      <p>Every little moment with you means so much to me.</p>
-      <button onclick="nextCard()">More</button>
-    </section>
-
-    <section class="card scrapbook">
-      <h2>More Sweet Moments</h2>
-
-      <div class="photos">
-        <img src="images/photo5.jpg">
-        <img src="images/photo6.jpg">
-        <img src="images/photo7.jpg">
-        <img src="images/photo8.jpg">
-      </div>
-
-      <p>You make ordinary days feel special.</p>
-      <button onclick="nextCard()">More</button>
-    </section>
-
-    <section class="card scrapbook">
-      <h2>My Favorite View</h2>
-
-      <div class="photos">
-        <img src="images/photo9.jpg">
-        <img src="images/photo10.jpg">
-        <img src="images/photo11.jpg">
-        <img src="images/photo12.jpg">
-      </div>
-
-      <p>Your smile will always be one of my favorite things.</p>
-      <button onclick="nextCard()">Next</button>
-    </section>
-
-    <section class="card scrapbook">
-      <h2>Almost The End</h2>
-
-      <div class="photos three">
-        <img src="images/photo13.jpg">
-        <img src="images/photo14.jpg">
-        <img src="images/photo15.jpg">
-      </div>
-
-      <p>This is only the beginning of many more memories.</p>
-      <button onclick="nextCard()">Final</button>
-    </section>
-
-    <section class="card final">
-      <h1>Happy 28th Birthday 🎂</h1>
-      <p>
-        I hope this year brings you happiness, peace, love,
-        success, and everything your heart dreams of.
-      </p>
-      <p>I love you more than words can say 💙</p>
-      <button onclick="celebrate()">Celebrate</button>
-    </section>
-  </main>
-
   <canvas id="confetti"></canvas>
+
+  <a class="song" href="https://www.youtube.com/results?search_query=The+Two+of+Us+Grover+Washington+Jr" target="_blank">
+    our song ♫
+  </a>
+
+  <section class="hero">
+    <div class="star">✦</div>
+    <p class="mini">a little surprise for</p>
+    <h1>Happy Birthday</h1>
+    <h2>my love</h2>
+    <p class="hint">scroll down slowly ↓</p>
+  </section>
+
+  <section class="panel">
+    <div class="bubble">
+      <h3>dear you,</h3>
+      <p>
+        I made this little page to keep some of our sweetest memories.
+        Every scroll is a tiny piece of my heart.
+      </p>
+    </div>
+  </section>
+
+  <section class="panel age-panel">
+    <div class="bubble age-bubble">
+      <h3>you have been making the world brighter for</h3>
+      <div id="ageCounter"></div>
+      <p class="caption">since July 13, 1998</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h3>our little memories</h3>
+
+    <div class="polaroid left">
+      <img src="images/photo1.jpg" alt="Memory 1">
+      <span>you + me</span>
+    </div>
+
+    <div class="polaroid right">
+      <img src="images/photo2.jpg" alt="Memory 2">
+      <span>sweet day</span>
+    </div>
+
+    <div class="polaroid left">
+      <img src="images/photo3.jpg" alt="Memory 3">
+      <span>favorite smile</span>
+    </div>
+
+    <div class="polaroid right">
+      <img src="images/photo4.jpg" alt="Memory 4">
+      <span>soft moment</span>
+    </div>
+
+    <div class="polaroid left">
+      <img src="images/photo5.jpg" alt="Memory 5">
+      <span>with you</span>
+    </div>
+
+    <div class="polaroid right">
+      <img src="images/photo6.jpg" alt="Memory 6">
+      <span>my favorite</span>
+    </div>
+
+    <div class="polaroid left">
+      <img src="images/photo7.jpg" alt="Memory 7">
+      <span>little joy</span>
+    </div>
+
+    <div class="polaroid right">
+      <img src="images/photo8.jpg" alt="Memory 8">
+      <span>blue memory</span>
+    </div>
+
+    <div class="polaroid left">
+      <img src="images/photo9.jpg" alt="Memory 9">
+      <span>always us</span>
+    </div>
+
+    <div class="polaroid right">
+      <img src="images/photo10.jpg" alt="Memory 10">
+      <span>so special</span>
+    </div>
+
+    <div class="polaroid left">
+      <img src="images/photo11.jpg" alt="Memory 11">
+      <span>my heart</span>
+    </div>
+
+    <div class="polaroid right">
+      <img src="images/photo12.jpg" alt="Memory 12">
+      <span>our story</span>
+    </div>
+
+    <div class="polaroid left">
+      <img src="images/photo13.jpg" alt="Memory 13">
+      <span>lucky me</span>
+    </div>
+
+    <div class="polaroid right">
+      <img src="images/photo14.jpg" alt="Memory 14">
+      <span>beautiful</span>
+    </div>
+
+    <div class="polaroid center">
+      <img src="images/photo15.jpg" alt="Memory 15">
+      <span>more to come</span>
+    </div>
+  </section>
+
+  <section class="letter-section">
+    <div class="letter">
+      <h3>my little letter</h3>
+
+      <p>
+        Happy 28th Birthday, my love.
+        I hope this year brings you peace, happiness, love, success,
+        and everything your heart has been waiting for.
+      </p>
+
+      <p>
+        Thank you for every smile, every laugh, and every beautiful memory.
+        I hope this little blue page reminds you how special you are to me.
+      </p>
+
+      <p>
+        No matter how far we are, you will always have a special place
+        in my heart.
+      </p>
+    </div>
+  </section>
+
+  <section class="final">
+    <p class="mini">one last thing...</p>
+    <h1>I love you</h1>
+    <h2>more than words can say</h2>
+    <button onclick="celebrate()">celebrate</button>
+  </section>
 
   <script src="script.js"></script>
 </body>
