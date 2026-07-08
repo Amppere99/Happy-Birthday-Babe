@@ -98,3 +98,46 @@ function animate() {
     requestAnimationFrame(animate);
   }
 }
+const blowBtn=document.getElementById("blowBtn");
+
+blowBtn.onclick=()=>{
+
+const flame=document.getElementById("flame");
+
+flame.style.opacity=0;
+
+flame.style.boxShadow="none";
+
+blowBtn.style.display="none";
+
+document.getElementById("finalMessage").classList.add("show");
+
+for(let i=0;i<150;i++){
+
+setTimeout(()=>{
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.innerHTML=Math.random()>.5?"⭐":"🤍";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.bottom="-40px";
+
+star.style.fontSize=16+Math.random()*22+"px";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},8000);
+
+},i*40);
+
+}
+
+}
