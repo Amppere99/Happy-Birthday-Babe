@@ -16,128 +16,165 @@ function updateAge() {
   const minutes = Math.floor(diff / 60);
   const seconds = diff - minutes * 60;
 
-  document.getElementById("ageCounter").innerHTML = `
-    <div class="age-box"><strong>${years}</strong><span>years</span></div>
-    <div class="age-box"><strong>${days}</strong><span>days</span></div>
-    <div class="age-box"><strong>${hours}</strong><span>hours</span></div>
-    <div class="age-box"><strong>${minutes}</strong><span>minutes</span></div>
-    <div class="age-box"><strong>${seconds}</strong><span>seconds</span></div>
-    <div class="age-box"><strong>∞</strong><span>love</span></div>
+  const counter = document.getElementById("ageCounter");
+
+  if (!counter) return;
+
+  counter.innerHTML = `
+    <div class="age-box">
+      <strong>${years}</strong>
+      <span>years</span>
+    </div>
+
+    <div class="age-box">
+      <strong>${days}</strong>
+      <span>days</span>
+    </div>
+
+    <div class="age-box">
+      <strong>${hours}</strong>
+      <span>hours</span>
+    </div>
+
+    <div class="age-box">
+      <strong>${minutes}</strong>
+      <span>minutes</span>
+    </div>
+
+    <div class="age-box">
+      <strong>${seconds}</strong>
+      <span>seconds</span>
+    </div>
+
+    <div class="age-box">
+      <strong>∞</strong>
+      <span>love</span>
+    </div>
   `;
 }
 
 updateAge();
 setInterval(updateAge, 1000);
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.25
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0.18
+  }
+);
+
+document.querySelectorAll(".reveal").forEach(element => {
+  revealObserver.observe(element);
 });
 
-document.querySelectorAll(".polaroid").forEach(card => {
-  observer.observe(card);
-});
-
-const canvas = document.getElementById("confetti");
+const canvas = document.getElementById("magicCanvas");
 const ctx = canvas.getContext("2d");
-let pieces = [];
 
-function resize() {
+let particles = [];
+
+function resizeCanvas() {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
 }
 
-resize();
-addEventListener("resize", resize);
+resizeCanvas();
 
-function celebrate() {
-  pieces = [];
+window.addEventListener("resize", resizeCanvas);
 
-  for (let i = 0; i < 220; i++) {
-    pieces.push({
-      x: Math.random() * canvas.width,
-      y: -20 - Math.random() * canvas.height,
-      size: 5 + Math.random() * 9,
-      speed: 2 + Math.random() * 5,
-      drift: -2 + Math.random() * 4,
-      rotate: Math.random() * 360
-    });
-  }
-
-  animate();
+function makeBackgroundParticle() {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: canvas.height + 20,
+    size: Math.random() * 2.4 + 1,
+    speed: Math.random() * 0.7 + 0.25,
+    drift: Math.random() * 0.45 - 0.225,
+    alpha: Math.random() * 0.45 + 0.18
+  });
 }
 
-function animate() {
+function drawParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  pieces.forEach(p => {
-    p.y += p.speed;
-    p.x += p.drift;
-    p.rotate += 6;
+  if (particles.length < 110) {
+    makeBackgroundParticle();
+  }
 
-    ctx.save();
-    ctx.translate(p.x, p.y);
-    ctx.rotate(p.rotate * Math.PI / 180);
+  particles.forEach(particle => {
+    particle.y -= particle.speed;
+    particle.x += particle.drift;
 
-    ctx.fillStyle = ["#ffffff", "#bfe7ff", "#4db3ff", "#0b3c7a", "#dff4ff"][
-      Math.floor(Math.random() * 5)
-    ];
-
-    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-    ctx.restore();
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255,255,255,${particle.alpha})`;
+    ctx.arc(
+      particle.x,
+      particle.y,
+      particle.size,
+      0,
+      Math.PI * 2
+    );
+    ctx.fill();
   });
 
-  pieces = pieces.filter(p => p.y < canvas.height + 40);
+  particles = particles.filter(particle => particle.y > -30);
 
-  if (pieces.length > 0) {
-    requestAnimationFrame(animate);
+  requestAnimationFrame(drawParticles);
+}
+
+drawParticles();
+
+const blowBtn = document.getElementById("blowBtn");
+
+if (blowBtn) {
+  blowBtn.addEventListener("click", () => {
+    const flame = document.getElementById("flame");
+    const smoke = document.getElementById("smoke");
+    const message = document.getElementById("birthdayMessage");
+
+    if (flame) {
+      flame.style.opacity = "0";
+      flame.style.transform = "translateX(-50%) scale(0.2)";
+      flame.style.boxShadow = "none";
+    }
+
+    if (smoke) {
+      smoke.classList.add("show");
+    }
+
+    blowBtn.style.display = "none";
+
+    setTimeout(() => {
+      if (message) {
+        message.classList.add("show");
+      }
+    }, 650);
+
+    releaseMagic();
+  });
+}
+
+function releaseMagic() {
+  for (let i = 0; i < 170; i++) {
+    setTimeout(() => {
+      const magic = document.createElement("div");
+
+      magic.className = "float-magic";
+      magic.textContent = Math.random() > 0.48 ? "✦" : "🤍";
+      magic.style.left = Math.random() * 100 + "vw";
+      magic.style.fontSize = 16 + Math.random() * 24 + "px";
+      magic.style.animationDuration = 5 + Math.random() * 5 + "s";
+      magic.style.opacity = 0.55 + Math.random() * 0.45;
+
+      document.body.appendChild(magic);
+
+      setTimeout(() => {
+        magic.remove();
+      }, 10000);
+    }, i * 38);
   }
-}
-const blowBtn=document.getElementById("blowBtn");
-
-blowBtn.onclick=()=>{
-
-const flame=document.getElementById("flame");
-
-flame.style.opacity=0;
-
-flame.style.boxShadow="none";
-
-blowBtn.style.display="none";
-
-document.getElementById("finalMessage").classList.add("show");
-
-for(let i=0;i<150;i++){
-
-setTimeout(()=>{
-
-const star=document.createElement("div");
-
-star.className="star";
-
-star.innerHTML=Math.random()>.5?"⭐":"🤍";
-
-star.style.left=Math.random()*100+"vw";
-
-star.style.bottom="-40px";
-
-star.style.fontSize=16+Math.random()*22+"px";
-
-document.body.appendChild(star);
-
-setTimeout(()=>{
-
-star.remove();
-
-},8000);
-
-},i*40);
-
-}
-
 }
