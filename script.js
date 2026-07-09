@@ -178,3 +178,32 @@ function releaseMagic() {
     }, i * 38);
   }
 }
+const pageSections = document.querySelectorAll("section");
+let pageIndex = 0;
+
+function goToPage(index) {
+  if (index < 0) index = 0;
+  if (index >= pageSections.length) index = pageSections.length - 1;
+
+  pageIndex = index;
+
+  pageSections[pageIndex].scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+document.getElementById("nextPage").addEventListener("click", () => {
+  goToPage(pageIndex + 1);
+});
+
+document.getElementById("prevPage").addEventListener("click", () => {
+  goToPage(pageIndex - 1);
+});
+
+const envelope = document.getElementById("envelope");
+
+if (envelope) {
+  envelope.addEventListener("click", () => {
+    envelope.classList.toggle("open");
+  });
+}
