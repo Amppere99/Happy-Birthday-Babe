@@ -861,3 +861,99 @@ border-radius:50%;
     margin: 36px auto 18px;
   }
 }
+.nav-buttons {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  display: flex;
+  gap: 14px;
+}
+
+.nav-buttons button {
+  border: none;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.9);
+  color: var(--navy);
+  font-family: var(--text-font);
+  font-weight: 900;
+  box-shadow: 0 14px 32px rgba(0,0,0,.22);
+}
+
+.page-screen {
+  min-height: 100vh;
+}
+
+.envelope-box {
+  text-align: center;
+  width: min(650px, 92vw);
+}
+
+.envelope {
+  width: min(540px, 88vw);
+  height: 360px;
+  margin: 35px auto;
+  position: relative;
+  background: linear-gradient(145deg, #0b5fb5, #9bd9ff);
+  border-radius: 24px;
+  box-shadow: 0 30px 70px rgba(0,0,0,.28);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, transparent 50%, rgba(255,255,255,.35) 50%);
+}
+
+.flap {
+  position: absolute;
+  inset: 0;
+  background: #dff4ff;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  transform-origin: top;
+  transition: 1s ease;
+  z-index: 3;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.letter-paper {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: -430px;
+  max-height: 520px;
+  overflow-y: auto;
+  background: rgba(255,255,255,.96);
+  color: #12315f;
+  border-radius: 22px;
+  padding: 30px 24px;
+  transition: 1s ease;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0,0,0,.2);
+}
+
+.envelope.open .letter-paper {
+  bottom: 22px;
+}
+
+.letter-paper h3 {
+  font-size: 62px;
+}
+
+.letter-paper p {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.tap-hint {
+  color: white;
+  font-weight: 800;
+}
