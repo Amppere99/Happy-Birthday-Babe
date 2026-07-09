@@ -110,6 +110,54 @@ body::before {
     filter: blur(0);
   }
 }
+@media (max-width:768px){
+
+.hero-card h1{
+font-size:68px !important;
+}
+
+.hero-card h2{
+font-size:42px !important;
+}
+
+.glass-card,
+.memory-card,
+.envelope-box,
+.cake-wrap{
+width:92%;
+padding:22px;
+}
+
+.polaroid img{
+height:230px;
+}
+
+.envelope{
+width:100%;
+height:300px;
+}
+
+.letter-paper{
+max-height:250px;
+}
+
+#birthdayMessage h1{
+font-size:52px !important;
+}
+
+#birthdayMessage h2{
+font-size:34px !important;
+}
+
+.song-btn{
+transform:scale(.85);
+}
+
+.nav-buttons{
+transform:translateX(-50%) scale(.85);
+}
+
+}
 
 .hero-card {
   color: white;
@@ -562,4 +610,49 @@ p {
   .cake {
     transform: scale(.86);
   }
+}
+/* ===== iPhone Layout ===== */
+
+body{
+
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:#06224d;
+
+}
+
+.app{
+
+width:min(430px,100vw);
+
+height:100svh;
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:32px;
+
+background:linear-gradient(
+180deg,
+#8fd3ff,
+#5eb6ff,
+#0b4f97);
+
+box-shadow:0 30px 80px rgba(0,0,0,.35);
+
+}
+
+@media (min-width:900px){
+
+.app{
+
+height:92vh;
+
+margin:18px;
+
+}
+
 }
