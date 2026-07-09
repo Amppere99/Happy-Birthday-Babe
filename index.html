@@ -3,188 +3,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Happy Birthday Jacob</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<div class="nav-buttons">
-  <button id="prevPage">Back</button>
-  <button id="nextPage">Next</button>
-</div>
-  
+
 <body>
   <canvas id="magicCanvas"></canvas>
 
-  <a
-    class="song-btn"
-    href="https://www.youtube.com/results?search_query=Just+The+Two+Of+Us+Grover+Washington"
-    target="_blank"
-  >
+  <a class="song-btn" href="https://www.youtube.com/results?search_query=Just+The+Two+Of+Us+Grover+Washington" target="_blank">
     ♫ our song
   </a>
 
-  <section class="hero">
-    <div class="sparkle">✦</div>
-    <p class="mini">a little surprise for</p>
-    <h1>Happy Birthday</h1>
-    <h2>Jacob</h2>
-    <p class="scroll-text">scroll slowly ↓</p>
-  </section>
+  <main class="app">
 
-  <section class="intro reveal">
-    <div class="glass-card">
-      <h3>dear you,</h3>
-      <p>
-        I made this little blue story for you — a soft place for our memories,
-        our smiles, and the beautiful beginning of us.
-      </p>
-    </div>
-  </section>
+    <section class="page active">
+      <div class="hero-card">
+        <div class="sparkle">✦</div>
+        <p class="mini">a little surprise for</p>
+        <h1>Happy Birthday</h1>
+        <h2>Jacob</h2>
+        <p class="tap-text">tap next to begin 🤍</p>
+      </div>
+    </section>
 
-  <section class="age-section reveal">
-    <div class="glass-card">
-      <h3>you have been making the world brighter for</h3>
-      <div id="ageCounter"></div>
-      <p class="caption">since July 13, 1998</p>
-    </div>
-  </section>
-
-  <section class="gallery">
-    <h3 class="gallery-title">our little memories</h3>
-
-    <div class="polaroid left reveal">
-<img src="images/photo1.JPG">
-<span>you + me</span>
-</div>
-
-<div class="polaroid right reveal">
-<img src="images/photo2.jpg">
-<span>sweet day</span>
-</div>
-
-<div class="polaroid left reveal">
-<img src="images/photo3.JPG">
-<span>favorite smile</span>
-</div>
-
-<div class="polaroid right reveal">
-<img src="images/photo4.JPG">
-<span>soft moment</span>
-</div>
-
-<div class="polaroid left reveal">
-<img src="images/photo5.JPG">
-<span>with you</span>
-</div>
-
-<div class="polaroid right reveal">
-<img src="images/photo6.JPG">
-<span>my favorite</span>
-</div>
-
-<div class="polaroid left reveal">
-<img src="images/photo7.JPG">
-<span>little joy</span>
-</div>
-
-<div class="polaroid right reveal">
-<img src="images/photo8.JPG">
-<span>blue memory</span>
-</div>
-
-<div class="polaroid left reveal">
-<img src="images/photo9.JPG">
-<span>always us</span>
-</div>
-
-<div class="polaroid right reveal">
-<img src="images/photo10.JPG">
-<span>so special</span>
-</div>
-
-<div class="polaroid left reveal">
-<img src="images/photo11.JPG">
-<span>my heart</span>
-</div>
-
-<div class="polaroid right reveal">
-<img src="images/photo12.JPG">
-<span>our story</span>
-</div>
-
-<div class="polaroid left reveal">
-<img src="images/photo13.JPG">
-<span>lucky me</span>
-</div>
-
-<div class="polaroid right reveal">
-<img src="images/photo14.JPG">
-<span>beautiful</span>
-</div>
-
-<div class="polaroid center reveal">
-<img src="images/photo15.jpg">
-<span>more to come</span>
-</div>
-
-  <section class="letter-section page-screen">
-  <div class="envelope-box">
-    <h3>a little letter</h3>
-
-    <div class="envelope" id="envelope">
-      <div class="flap"></div>
-
-      <div class="letter-paper">
-        <h3>To My Favorite Person</h3>
-
-        <p>Happy 28th Birthday, my love.</p>
-
+    <section class="page">
+      <div class="glass-card">
+        <h3>dear you,</h3>
         <p>
-          It's still amazing to me that two strangers met through a dating app
-          and somehow found something so real. In just one month, we've already
-          shared so many beautiful memories together.
-        </p>
-
-        <p>
-          We've laughed, had misunderstandings, apologized, forgiven each other,
-          and held each other through difficult moments. Every experience has only
-          made us stronger.
-        </p>
-
-        <p>
-          Thank you for finding me when I didn't even know I was looking for
-          someone like you.
-        </p>
-
-        <p>
-          As you turn 28, I hope this year brings you good health, happiness,
-          success, adventures, and countless reasons to smile.
-        </p>
-
-        <p class="signature">
-          I love you.<br><br>
-          Always,<br>
-          Amp 🤍
+          I made this little blue story for you — a soft place for our memories,
+          our smiles, and the beautiful beginning of us.
         </p>
       </div>
-    </div>
+    </section>
 
-    <p class="tap-hint">tap the envelope to open</p>
+    <section class="page">
+      <div class="glass-card">
+        <h3>you have been making the world brighter for</h3>
+        <div id="ageCounter"></div>
+        <p class="caption">since July 13, 1998</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="memory-card">
+        <h3>our little memories</h3>
+        <div class="polaroid">
+          <img src="images/photo1.JPG">
+          <span>you + me</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="photo-grid">
+        <div class="polaroid"><img src="images/photo2.jpg"><span>sweet day</span></div>
+        <div class="polaroid"><img src="images/photo3.JPG"><span>favorite smile</span></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="photo-grid">
+        <div class="polaroid"><img src="images/photo4.JPG"><span>soft moment</span></div>
+        <div class="polaroid"><img src="images/photo5.JPG"><span>with you</span></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="photo-grid">
+        <div class="polaroid"><img src="images/photo6.JPG"><span>my favorite</span></div>
+        <div class="polaroid"><img src="images/photo7.JPG"><span>little joy</span></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="photo-grid">
+        <div class="polaroid"><img src="images/photo8.JPG"><span>blue memory</span></div>
+        <div class="polaroid"><img src="images/photo9.JPG"><span>always us</span></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="photo-grid">
+        <div class="polaroid"><img src="images/photo10.JPG"><span>so special</span></div>
+        <div class="polaroid"><img src="images/photo11.JPG"><span>my heart</span></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="photo-grid">
+        <div class="polaroid"><img src="images/photo12.JPG"><span>our story</span></div>
+        <div class="polaroid"><img src="images/photo13.JPG"><span>lucky me</span></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="photo-grid">
+        <div class="polaroid"><img src="images/photo14.JPG"><span>beautiful</span></div>
+        <div class="polaroid"><img src="images/photo15.jpg"><span>more to come</span></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="envelope-box">
+        <h3>a little letter</h3>
+
+        <div class="envelope" id="envelope">
+          <div class="flap"></div>
+
+          <div class="letter-paper">
+            <h3>To My Favorite Person</h3>
+
+            <p>Happy 28th Birthday, my love.</p>
+
+            <p>
+              It's still amazing to me that two strangers met through a dating app
+              and somehow found something so real. In just one month, we've already
+              shared so many beautiful memories together.
+            </p>
+
+            <p>
+              We've laughed, had misunderstandings, apologized, forgiven each other,
+              and held each other through difficult moments. Every experience has only
+              made us stronger.
+            </p>
+
+            <p>
+              Thank you for finding me when I didn't even know I was looking for
+              someone like you.
+            </p>
+
+            <p>
+              As you turn 28, I hope this year brings you good health, happiness,
+              success, adventures, and countless reasons to smile.
+            </p>
+
+            <p class="signature">
+              I love you.<br><br>
+              Always,<br>
+              Amp 🤍
+            </p>
+          </div>
+        </div>
+
+        <p class="hint">tap the envelope to open</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="cake-wrap">
+        <p class="mini">one last thing...</p>
+        <h3>make a wish</h3>
+
+        <div class="cake">
+          <div class="candle">
+            <div id="flame"></div>
+            <div id="smoke"></div>
+          </div>
+
+          <div class="drips"></div>
+          <div class="cake-layer cake-top"></div>
+          <div class="cake-layer cake-mid"></div>
+          <div class="cake-layer cake-bottom"></div>
+          <div class="plate"></div>
+        </div>
+
+        <button id="blowBtn">blow out the candle</button>
+
+        <div id="birthdayMessage">
+          <h1>Happy 28th Birthday</h1>
+          <h2>Jacob 🤍</h2>
+
+          <p>
+            May this year bring you endless happiness, peace, good health,
+            beautiful adventures, success, and every dream your heart is wishing for.
+          </p>
+
+          <p>
+            Thank you for finding me. I cannot wait to create thousands more memories with you.
+          </p>
+
+          <h4>I love you.</h4>
+          <h5>Always,<br>Amp 🤍</h5>
+
+          <a class="final-song" href="https://www.youtube.com/results?search_query=Just+The+Two+Of+Us+Grover+Washington" target="_blank">
+            ♫ press play before you leave
+          </a>
+
+          <p class="see-you">See you soon... 🤍</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="nav-buttons">
+    <button id="prevPage">‹ Back</button>
+    <button id="nextPage">Next ›</button>
   </div>
-</section>
-
-        <a
-          class="final-song"
-          href="https://www.youtube.com/results?search_query=Just+The+Two+Of+Us+Grover+Washington"
-          target="_blank"
-        >
-          ♫ press play before you leave
-        </a>
-      </div>
-    </div>
-  </section>
 
   <script src="script.js"></script>
 </body>
