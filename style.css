@@ -73,15 +73,25 @@ body::before {
   height: 100vh;
 }
 
-.page {
-  position: absolute;
-  inset: 0;
-  padding: 80px 22px 90px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  animation: pageIn .65s ease both;
+.page{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    min-height:100svh;
+
+    padding:20px;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    overflow-y:auto;
+
+    animation:pageIn .65s ease both;
 }
 
 .page.active {
