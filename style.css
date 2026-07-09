@@ -151,6 +151,9 @@ font-size:34px !important;
 
 .song-btn{
 transform:scale(.85);
+  right:20px;
+top:20px;
+z-index:999;
 }
 
 .nav-buttons{
@@ -568,14 +571,15 @@ p {
   font-size: 54px !important;
 }
 
-.nav-buttons {
-  position: fixed;
-  bottom: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  display: flex;
-  gap: 14px;
+.nav-buttons{
+position:absolute;
+left:50%;
+bottom:20px;
+transform:translateX(-50%);
+display:flex;
+gap:14px;
+z-index:999;
+
 }
 
 .float-magic {
@@ -600,7 +604,7 @@ p {
   }
 
   .polaroid img {
-    height: 300px;
+    height: 250px;
   }
 
   .page {
