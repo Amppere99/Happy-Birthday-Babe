@@ -17,7 +17,7 @@
       <button id="startExperience">Tap to begin 🤍</button>
     </div>
   </div>
-  <div id="youtubePlayer" aria-hidden="true"></div>
+  
   <main class="app">
     <section class="page active">
       <div class="hero-card">
@@ -75,7 +75,15 @@
     </section>
   </main>
   <div class="nav-buttons"><button id="prevPage">‹ Back</button><button id="nextPage">Next ›</button></div>
-  <script src="https://www.youtube.com/iframe_api"></script>
+  
+  <audio id="firstSong" preload="auto">
+    <source src="just-the-two-of-us.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio id="finalSong" preload="auto">
+    <source src="cant-take-my-eyes-off-you.mp3" type="audio/mpeg" />
+  </audio>
+
   <script src="script.js"></script>
 </body>
 </html>
