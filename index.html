@@ -2,538 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Happy Birthday Jacob</title>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-  <!-- Background sparkle canvas -->
   <canvas id="magicCanvas"></canvas>
-
-  <!-- Opening screen -->
   <div id="startOverlay">
     <div class="start-card">
-
       <div class="start-star">✦</div>
-
       <p>a little birthday surprise for</p>
-
       <h1>Jacob</h1>
-
-      <button id="startExperience">
-        Tap to begin 🤍
-      </button>
-
+      <button id="startExperience">Tap to begin 🤍</button>
     </div>
   </div>
-
-  <!-- Hidden YouTube player -->
   <div id="youtubePlayer" aria-hidden="true"></div>
-
   <main class="app">
-
-    <!-- PAGE 1 -->
     <section class="page active">
-
       <div class="hero-card">
-
         <div class="sparkle">✦</div>
-
-        <p class="mini">
-          a little surprise for
-        </p>
-
+        <p class="mini">a little surprise for</p>
         <h1>Happy Birthday</h1>
-
         <h2>Jacob</h2>
-
-        <p class="tap-text">
-          tap next to begin 🤍
-        </p>
-
+        <p class="tap-text">tap next to begin 🤍</p>
       </div>
-
     </section>
-
-    <!-- PAGE 2 -->
+    <section class="page"><div class="glass-card"><h3>dear you,</h3><p>I made this little blue story for you — a soft place for our memories, our smiles, and the beautiful beginning of us.</p></div></section>
+    <section class="page"><div class="glass-card"><h3>you have been making the world brighter for</h3><div id="ageCounter"></div><p class="caption">since July 13, 1998</p></div></section>
+    <section class="page"><div class="memory-card"><h3>our little memories</h3><div class="polaroid single"><img src="images/photo1.JPG" alt="Memory 1" /><span>you + me</span></div></div></section>
+    <section class="page"><div class="photo-grid"><div class="polaroid"><img src="images/photo2.jpg" alt="Memory 2" /><span>sweet day</span></div><div class="polaroid video-card"><video class="memory-video" controls playsinline preload="metadata"><source src="videos/video1.mp4" type="video/mp4" /></video><span>favorite moment</span></div></div></section>
+    <section class="page"><div class="photo-grid"><div class="polaroid"><img src="images/photo4.JPG" alt="Memory 4" /><span>soft moment</span></div><div class="polaroid video-card"><video class="memory-video" controls playsinline preload="metadata"><source src="videos/video2.mp4" type="video/mp4" /></video><span>with you</span></div></div></section>
+    <section class="page"><div class="photo-grid"><div class="polaroid"><img src="images/photo6.JPG" alt="Memory 6" /><span>my favorite</span></div><div class="polaroid"><img src="images/photo7.JPG" alt="Memory 7" /><span>little joy</span></div></div></section>
+    <section class="page"><div class="photo-grid"><div class="polaroid"><img src="images/photo8.JPG" alt="Memory 8" /><span>blue memory</span></div><div class="polaroid"><img src="images/photo9.JPG" alt="Memory 9" /><span>always us</span></div></div></section>
+    <section class="page"><div class="photo-grid"><div class="polaroid"><img src="images/photo10.JPG" alt="Memory 10" /><span>so special</span></div><div class="polaroid"><img src="images/photo11.JPG" alt="Memory 11" /><span>my heart</span></div></div></section>
+    <section class="page"><div class="photo-grid"><div class="polaroid video-card"><video class="memory-video" controls playsinline preload="metadata"><source src="videos/video3.mp4" type="video/mp4" /></video><span>our story</span></div><div class="polaroid"><img src="images/photo13.JPG" alt="Memory 13" /><span>lucky me</span></div></div></section>
+    <section class="page"><div class="photo-grid"><div class="polaroid"><img src="images/photo14.JPG" alt="Memory 14" /><span>beautiful</span></div><div class="polaroid"><img src="images/photo15.jpg" alt="Memory 15" /><span>more to come</span></div></div></section>
     <section class="page">
-
-      <div class="glass-card">
-
-        <h3>dear you,</h3>
-
-        <p>
-          I made this little blue story for you —
-          a soft place for our memories,
-          our smiles, and the beautiful beginning of us.
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 3 -->
-    <section class="page">
-
-      <div class="glass-card">
-
-        <h3>
-          you have been making the world brighter for
-        </h3>
-
-        <div id="ageCounter"></div>
-
-        <p class="caption">
-          since July 13, 1998
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 4: PHOTO 1 -->
-    <section class="page">
-
-      <div class="memory-card">
-
-        <h3>our little memories</h3>
-
-        <div class="polaroid single">
-
-          <img
-            src="images/photo1.JPG"
-            alt="Memory 1"
-          />
-
-          <span>you + me</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 5: PHOTO 2 + VIDEO 1 replaces PHOTO 3 -->
-    <section class="page">
-
-      <div class="photo-grid">
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo2.jpg"
-            alt="Memory 2"
-          />
-
-          <span>sweet day</span>
-
-        </div>
-
-        <div class="polaroid video-card">
-
-          <video
-            class="memory-video"
-            controls
-            playsinline
-            preload="metadata"
-          >
-
-            <source
-              src="videos/video1.mp4"
-              type="video/mp4"
-            />
-
-            Your browser does not support this video.
-
-          </video>
-
-          <span>favorite moment</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 6: PHOTO 4 + VIDEO 2 replaces PHOTO 5 -->
-    <section class="page">
-
-      <div class="photo-grid">
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo4.JPG"
-            alt="Memory 4"
-          />
-
-          <span>soft moment</span>
-
-        </div>
-
-        <div class="polaroid video-card">
-
-          <video
-            class="memory-video"
-            controls
-            playsinline
-            preload="metadata"
-          >
-
-            <source
-              src="videos/video2.mp4"
-              type="video/mp4"
-            />
-
-            Your browser does not support this video.
-
-          </video>
-
-          <span>with you</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 7: PHOTO 6 + PHOTO 7 -->
-    <section class="page">
-
-      <div class="photo-grid">
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo6.JPG"
-            alt="Memory 6"
-          />
-
-          <span>my favorite</span>
-
-        </div>
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo7.JPG"
-            alt="Memory 7"
-          />
-
-          <span>little joy</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 8: PHOTO 8 + PHOTO 9 -->
-    <section class="page">
-
-      <div class="photo-grid">
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo8.JPG"
-            alt="Memory 8"
-          />
-
-          <span>blue memory</span>
-
-        </div>
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo9.JPG"
-            alt="Memory 9"
-          />
-
-          <span>always us</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 9: PHOTO 10 + PHOTO 11 -->
-    <section class="page">
-
-      <div class="photo-grid">
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo10.JPG"
-            alt="Memory 10"
-          />
-
-          <span>so special</span>
-
-        </div>
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo11.JPG"
-            alt="Memory 11"
-          />
-
-          <span>my heart</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 10: VIDEO 3 replaces PHOTO 12 + PHOTO 13 -->
-    <section class="page">
-
-      <div class="photo-grid">
-
-        <div class="polaroid video-card">
-
-          <video
-            class="memory-video"
-            controls
-            playsinline
-            preload="metadata"
-          >
-
-            <source
-              src="videos/video3.mp4"
-              type="video/mp4"
-            />
-
-            Your browser does not support this video.
-
-          </video>
-
-          <span>our story</span>
-
-        </div>
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo13.JPG"
-            alt="Memory 13"
-          />
-
-          <span>lucky me</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 11: PHOTO 14 + PHOTO 15 -->
-    <section class="page">
-
-      <div class="photo-grid">
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo14.JPG"
-            alt="Memory 14"
-          />
-
-          <span>beautiful</span>
-
-        </div>
-
-        <div class="polaroid">
-
-          <img
-            src="images/photo15.jpg"
-            alt="Memory 15"
-          />
-
-          <span>more to come</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PAGE 12: ENVELOPE LETTER -->
-    <section class="page">
-
       <div class="envelope-box">
-
         <h3>a little letter</h3>
-
-        <div
-          class="envelope"
-          id="envelope"
-          role="button"
-          tabindex="0"
-          aria-label="Open the letter"
-        >
-
+        <div class="envelope" id="envelope">
           <div class="flap"></div>
-
           <div class="letter-paper">
-
             <h3>To My Favorite Person</h3>
-
-            <p>
-              Happy 28th Birthday, my love.
-            </p>
-
-            <p>
-              It's still amazing to me that two strangers met through
-              a dating app and somehow found something so real.
-              In just one month, we've already shared so many
-              beautiful memories together.
-            </p>
-
-            <p>
-              We've laughed, had misunderstandings, apologized,
-              forgiven each other, and held each other through difficult moments.
-              Every experience has only made us stronger.
-            </p>
-
-            <p>
-              Thank you for finding me when I didn't even know
-              I was looking for someone like you.
-            </p>
-
-            <p>
-              As you turn 28, I hope this year brings you good health,
-              happiness, success, adventures, and countless reasons to smile.
-              Here's to us and all the memories we haven't made yet.
-            </p>
-
-            <p class="signature">
-              I love you.<br><br>
-              Always,<br>
-              Amp 🤍
-            </p>
-
+            <p>Happy 28th Birthday, my love.</p>
+            <p>It's still amazing to me that two strangers met through a dating app and somehow found something so real. In just one month, we've already shared so many beautiful memories together.</p>
+            <p>We've laughed, had misunderstandings, apologized, forgiven each other, and held each other through difficult moments. Every experience has only made us stronger.</p>
+            <p>Thank you for finding me when I didn't even know I was looking for someone like you.</p>
+            <p>As you turn 28, I hope this year brings you good health, happiness, success, adventures, and countless reasons to smile.</p>
+            <p class="signature">I love you.<br><br>Always,<br>Amp 🤍</p>
           </div>
-
         </div>
-
-        <p class="hint">
-          tap the envelope to open
-        </p>
-
+        <p class="hint">tap the envelope to open</p>
       </div>
-
     </section>
-
-    <!-- PAGE 13: CAKE -->
     <section class="page">
-
       <div class="cake-wrap">
-
-        <p class="mini">
-          one last thing...
-        </p>
-
+        <p class="mini">one last thing...</p>
         <h3>make a wish</h3>
-
         <div class="cake">
-
-          <div class="candle">
-
-            <div id="flame"></div>
-
-            <div id="smoke"></div>
-
-          </div>
-
-          <div class="drips"></div>
-
-          <div class="cake-layer cake-top"></div>
-
-          <div class="cake-layer cake-mid"></div>
-
-          <div class="cake-layer cake-bottom"></div>
-
-          <div class="plate"></div>
-
+          <div class="candle"><div id="flame"></div><div id="smoke"></div></div>
+          <div class="drips"></div><div class="cake-layer cake-top"></div><div class="cake-layer cake-mid"></div><div class="cake-layer cake-bottom"></div><div class="plate"></div>
         </div>
-
-        <button id="blowBtn">
-          blow out the candle
-        </button>
-
+        <button id="blowBtn">blow out the candle</button>
         <div id="birthdayMessage">
-
-          <h1>Happy 28th Birthday</h1>
-
-          <h2>Jacob 🤍</h2>
-
-          <p>
-            May this year bring you endless happiness,
-            peace, good health, beautiful adventures,
-            success, and every dream your heart is wishing for.
-          </p>
-
-          <p>
-            Thank you for finding me.
-            I cannot wait to create thousands more memories with you.
-          </p>
-
-          <h4>I love you.</h4>
-
-          <h5>
-            Always,<br>
-            Amp 🤍
-          </h5>
-
-          <p class="see-you">
-            See you soon... 🤍
-          </p>
-
+          <h1>Happy 28th Birthday</h1><h2>Jacob 🤍</h2>
+          <p>May this year bring you endless happiness, peace, good health, beautiful adventures, success, and every dream your heart is wishing for.</p>
+          <p>Thank you for finding me. I cannot wait to create thousands more memories with you.</p>
+          <h4>I love you.</h4><h5>Always,<br>Amp 🤍</h5><p class="see-you">See you soon... 🤍</p>
         </div>
-
       </div>
-
     </section>
-
   </main>
-
-  <!-- Navigation -->
-  <div class="nav-buttons">
-
-    <button id="prevPage">
-      ‹ Back
-    </button>
-
-    <button id="nextPage">
-      Next ›
-    </button>
-
-  </div>
-
-  <!-- YouTube API -->
+  <div class="nav-buttons"><button id="prevPage">‹ Back</button><button id="nextPage">Next ›</button></div>
   <script src="https://www.youtube.com/iframe_api"></script>
-
-  <!-- Main JavaScript -->
   <script src="script.js"></script>
-
 </body>
 </html>
